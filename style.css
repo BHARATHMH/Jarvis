@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background: rgba(202, 253, 255, 0.5);
+  }
+  25% {
+    background: rgba(135, 206, 235, 0.5);
+  }
+  50% {
+    background: rgba(0, 191, 255, 0.5);
+  }
+  75% {
+    background: rgba(70, 130, 180, 0.5);
+  }
+  100% {
+    background: rgba(202, 253, 255, 0.5);
+  }
+}
+
+@keyframes lightEffect {
+  0% {
+    box-shadow: 0 0 10px rgba(202, 253, 255, 0.5), 0 0 20px rgba(135, 206, 235, 0.5), 0 0 30px rgba(0, 191, 255, 0.5), 0 0 40px rgba(70, 130, 180, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(202, 253, 255, 0.75), 0 0 40px rgba(135, 206, 235, 0.75), 0 0 60px rgba(0, 191, 255, 0.75), 0 0 80px rgba(70, 130, 180, 0.75);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(202, 253, 255, 0.5), 0 0 20px rgba(135, 206, 235, 0.5), 0 0 30px rgba(0, 191, 255, 0.5), 0 0 40px rgba(70, 130, 180, 0.5);
+  }
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.main .image-container {
+  padding: 10px;
+}
+
+.main .image-container .image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+.main .image-container .image img {
+  width: 350px;
+  align-items: center;
+}
+
+.main .image-container h1 {
+  color: #00bcd4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.main .image-container p {
+  color: #324042;
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.main .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 50px;
+  border-radius: 20px;
+  animation: pulse 2s infinite, colorChange 5s infinite, lightEffect 3s infinite;
+}
+
+.main .input .talk {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.main .input .talk i {
+  font-size: 20px;
+  color: #aed0d0;
+}
+
+.main .input .content {
+  color: #aed0d0;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+#results {
+  color: #00bcd4;
+  margin-top: 20px;
+  text-align: center;
+}
